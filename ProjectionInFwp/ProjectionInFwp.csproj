@@ -22,7 +22,9 @@
         
         <!--Reference a standalone WinUI projection assembly to represent a build-time reference assembly, 
         but don't binplace it, so the app is forced resolve the library from somewhere else.  Use ProcMon to 
-        observe locations probed (via ProjectionInFwp.PMF filter). FWP folder is not included.-->
+        observe locations probed (via ProjectionInFwp.PMF filter). If desired, run build.ps1 to build and
+        install a hacked ProjectReunion0.8 FWP containing Microsoft.WinUI.dll, to prove beyond ProcMon
+        that the loader won't find it.-->
         <WinUIProjectionAssembly Include="$(MSBuildProjectDirectory)\microsoft.winui.dll" />
         <Reference Include="@(WinUIProjectionAssembly)" />
     </ItemGroup>
