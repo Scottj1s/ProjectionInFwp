@@ -20,8 +20,8 @@
         <!--Reference a hacked up ProjectReunion.WinUI with no WinUI projection assembly-->
         <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.8.2-no-projection]" />
         
-        <!--Reference a standalone WinUI projection assembly to represent a built-time reference assembly, 
-        but don't binplace it to the app must resolve the library from somewhere else.  Use ProcMon to 
+        <!--Reference a standalone WinUI projection assembly to represent a build-time reference assembly, 
+        but don't binplace it, so the app is forced resolve the library from somewhere else.  Use ProcMon to 
         observe locations probed (via ProjectionInFwp.PMF filter). FWP folder is not included.-->
         <WinUIProjectionAssembly Include="$(MSBuildProjectDirectory)\microsoft.winui.dll" />
         <Reference Include="@(WinUIProjectionAssembly)" />
